@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --bg-color-day: #FFF;
+  --button-on-color: hsl(194, 97%, 31%);
+  --button-off-color: hsla(240, 9%, 89%, 1);
+  --contour-on-color:hsla(0, 0%, 100%, 1);
+  --contour-off-color: hsla(240, 6%, 21%, 1);
+  --font-family:'Roboto', sans-serif;
+}
+
+main {
+  background-color: var(--bg-color-day);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rem; /*tirar*/
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+}
+
+#numbersANDsettingButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span {
+  font-size: 12.6rem;
+  margin-bottom: 1.7rem;
+  font-weight: 500;
+  filter: drop-shadow(0px 4px 4px hsl(0, 0%, 0%));
+}
+
+.hide{
+  display: none;
+}
+
+.settingButtons {
+  width: fit-content;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 4.0rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#backgroundSounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: clamp( 28rem, 28rem + 20vw, 35rem); /* rever */
+
+}
+
+#backgroundSounds button {
+  background: var(--button-off-color);
+  width: 13.8rem;
+  height: 15.2rem;
+  margin: 1.6rem;
+  border-radius: 2.4rem;
+}
+
+/* #pomodoro span {
+  font-size: 5.0rem;
+}
+
+#pomodoro {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+#pomodoro button {
+  
+  border: green 2px solid;
+  height: 7rem;
+  width: 7rem; */
+
+
+/* #backgroundSounds svg path {
+  fill: var(--contour-on-color);
+} */
+
+
+
+
+
+
+
