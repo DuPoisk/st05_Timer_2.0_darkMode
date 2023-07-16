@@ -28,13 +28,19 @@ export default function () {
   buttonBgRestaurant.volume = 0.5
   buttonBgCamping.volume = 0.5
   
+ 
 
   function pressButton(){
     buttonPressAudio.play()
   }
 
   function timeIsFinished() {
-    kitchenTimer.play()
+    kitchenTimer.play() 
+    
+    buttonBgOutdoors.pause()
+    buttonBgRaining.pause()
+    buttonBgRestaurant.pause()
+    buttonBgCamping.pause()
   }
 
   function bgAudioStart(){
@@ -43,16 +49,35 @@ export default function () {
 
   function pressButtonOutdoors(){
     buttonBgOutdoors.play()
+
+    buttonBgRaining.pause()
+    buttonBgRestaurant.pause()
+    buttonBgCamping.pause()
   }
   
   function pressButtonRaining(){
     buttonBgRaining.play()
+
+    buttonBgOutdoors.pause()
+    buttonBgRestaurant.pause()
+    buttonBgCamping.pause()
   }
+
   function pressButtonRestaurant(){
     buttonBgRestaurant.play()
+
+    buttonBgOutdoors.pause()
+    buttonBgRaining.pause()   
+    buttonBgCamping.pause()
   }
+
   function pressButtonCamping(){
     buttonBgCamping.play()
+
+    buttonBgOutdoors.pause()
+    buttonBgRaining.pause()
+    buttonBgRestaurant.pause()
+    
   }
 
   return {

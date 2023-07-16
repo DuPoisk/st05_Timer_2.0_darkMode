@@ -1,5 +1,5 @@
 //default import
-import Controls from "./controls.js"
+//import Controls from "./controls.js"
 import Timer from "./timer.js"
 import Sound from "./sounds.js"
 import {
@@ -17,25 +17,22 @@ import {
   secondsDisplay,
  } from "./elements.js"
 
-const controls = Controls({
-  buttonPlay,
-  buttonPause,
-  buttonSet, 
-  buttonStop,
-  
-})
+//const controls = Controls({
+  //buttonPlay,
+  //buttonPause, 
+//})
 
 const timer = Timer({
   minutesDisplay, //shorthand
   secondsDisplay, 
-  resetControls: controls.reset, 
-  })
+  //resetControls: timer.reset, 
+})
 
-  const sound = Sound ()
+const sound = Sound ()
   
 
 //BUTTONS
-  buttonPlay.addEventListener('click', function() { // depois do click executa a função
+buttonPlay.addEventListener('click', function() { // depois do click executa a função
     //controls.play()
     buttonPlay.classList.toggle("hide")
     buttonPause.classList.toggle("hide")
@@ -44,7 +41,7 @@ const timer = Timer({
     sound.pressButton()
   })
 
-  buttonPause.addEventListener('click', function() {
+buttonPause.addEventListener('click', function() {
     //controls.pause()
     buttonPause.classList.toggle("hide")
     buttonPlay.classList.toggle("hide")
@@ -54,7 +51,7 @@ const timer = Timer({
     
   })
 
-  buttonStop.addEventListener('click', function() {
+buttonStop.addEventListener('click', function() {
     //controls.reset()
     buttonPlay.classList.remove("hide")
     buttonPause.classList.add("hide")
@@ -63,34 +60,55 @@ const timer = Timer({
     sound.pressButton()
   })
 
-  function getMinutes(){
-    let newMinutes = prompt("Quantos minutos?") 
-    if (!newMinutes){
-      return false
-    }
 
-   return newMinutes
+buttonSet.addEventListener('click', function(){
+  function getMinutes(){
+      let newMinutes = prompt("Quantos minutos?")
+       
+      if (!newMinutes){
+        return false
+      }
+  
+     return newMinutes
+  
   }
 
+  let newMinutes = getMinutes()
+  
+  if(!newMinutes) {
+    timer.reset()
+    return
+  }
 
-  buttonSet.addEventListener('click', function(){
-    let newMinutes = getMinutes() 
+  timer.updateDisplay(newMinutes, 0)
+  timer.updateMinutes(newMinutes)
+})
 
-    timer.updateDisplay(newMinutes,0)
-    timer.updateMinutes(newMinutes)
+
+
+  /*buttonMinus.addEventListener('click', function() {
+    sound.pressButton()
+    minusPress()
+
+    function minusPress (){
+      let minutes = Number(minutesDisplay.textContent)
+      if (minutes >= 5){
+        minutes = minutes - 5
+        return
+      }
+
+
+    }
   })
+  */
 
 
-
-
-
-  buttonMinus.addEventListener('click', function() {
-    console.log("menos é mais")
-  })
-  // buttonPlus.addEventListener('click', function() {})
+  /* buttonPlus.addEventListener('click', function() {
+      sound.pressButton()
+  })*/
 
   buttonOutdoors.addEventListener('click', function() {
-    sound.pressButtonOutdoors()
+    sound.pressButtonOutdoors()    
    })
 
   buttonRaining.addEventListener('click', function() {
@@ -105,6 +123,6 @@ const timer = Timer({
     sound.pressButtonCamping()
   })
 
-//criar isso nos elementos e linkar com html
 //fazer funcionalidade do +-
-//fazer funcionalidade do som de fundo mais as mudança de cor
+//fazer funcionalidade do botao
+//fazer funcionalidade da mudança de cor

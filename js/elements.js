@@ -15,6 +15,8 @@ const buttonRaining = document.querySelector('.raining')
 const buttonRestaurant = document.querySelector('.restaurant')
 const buttonCamping = document.querySelector('.camping')
 
+const volumeBarCamping = document.querySelector('#volumeCamping')
+
 
 export {
   buttonPlay,
@@ -29,4 +31,5 @@ export {
   buttonRaining,
   buttonRestaurant,
   buttonCamping,
+  volumeBarCamping,
 }

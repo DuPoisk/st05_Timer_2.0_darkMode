@@ -4,13 +4,22 @@ export default function Timer (
   {
     minutesDisplay, 
     secondsDisplay, 
-    resetControls,
+    //resetControls,
+   // resetDisplay,
   }
 ){
 
   let timerTimeOut
   let minutes = Number(minutesDisplay.textContent)
-
+/*
+  function resetDisplay(){// antigo reset controls
+    buttonPlay.classList.remove("hide")
+    buttonPause.classList.add("hide")
+    //minutesDisplay.textContent = "25"
+    //secondsDisplay.textContent = "00"
+    //resetTimer()
+  } 
+  */
 
   function reset(){
     updateDisplay(minutes,0)
@@ -28,31 +37,36 @@ export default function Timer (
     timerTimeOut = setTimeout(function(){
       let seconds = Number(secondsDisplay.textContent)
       let minutes = Number(minutesDisplay.textContent)
-      let isFinished = minutes <= 0 && seconds <= 0
+      
 
       updateDisplay(minutes, 0)
-      console.log(minutes)
+     // console.log(minutes)
 
-      if (isFinished) {
-        resetControls()
+      if (minutes <= 0 && seconds <= 0) {// Is Finished
+        //resetControls()
+        buttonPlay.classList.remove("hide")
+        buttonPause.classList.add("hide")
+
         updateDisplay()
         Sounds().timeIsFinished()
         return
       }
 
-      if (seconds <= 0) {
+      if (seconds <= 0){
         seconds = 3
-        --minutes 
+        --minutes // contagem regressiva dos minutos
+        
       }
-
+      
       updateDisplay(minutes, String(seconds - 1))
-      console.log(minutes)
+      
+      console.log(minutes, seconds)
       countDown()
     }, 1000)
   }
 
   function updateMinutes(newMinutes){
-    minutes = newMinutes
+    minutes = newMinutes    
   }
 
   function hold(){

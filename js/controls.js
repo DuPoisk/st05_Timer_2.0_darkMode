@@ -1,4 +1,6 @@
 
+/*
+
 export default function Controls(
   buttonPlay,
   buttonPause, 
@@ -41,3 +43,4 @@ export default function Controls(
   }
 }
 
+*/
