@@ -28,6 +28,7 @@ export default function () {
   buttonBgRestaurant.volume = 0.5
   buttonBgCamping.volume = 0.5
   
+
  
 
   function pressButton(){
@@ -36,7 +37,7 @@ export default function () {
 
   function timeIsFinished() {
     kitchenTimer.play() 
-    
+
     buttonBgOutdoors.pause()
     buttonBgRaining.pause()
     buttonBgRestaurant.pause()
@@ -83,17 +84,17 @@ export default function () {
   return {
     buttonPressAudio,
     kitchenTimer,
-    bgAudio,
-  //  buttonCamping,
-   // buttonRestaurant,
+    bgAudio,  
     pressButton,
     timeIsFinished,
-    bgAudioStart,
-    //buttonRaining,
-    //buttonOutdoors,
+    bgAudioStart,   
     pressButtonOutdoors,
     pressButtonRaining,
     pressButtonRestaurant,
     pressButtonCamping,
+    buttonBgOutdoors,
+    buttonBgRaining,
+    buttonBgRestaurant,
+    buttonBgCamping,
   }
 }

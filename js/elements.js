@@ -15,7 +15,14 @@ const buttonRaining = document.querySelector('.raining')
 const buttonRestaurant = document.querySelector('.restaurant')
 const buttonCamping = document.querySelector('.camping')
 
-const volumeBarCamping = document.querySelector('#volumeCamping')
+var rangeOutdoors = document.querySelector('.outdoors input')
+var volumeOutdoors = document.querySelector('.outdoors span')
+var rangeRaining = document.querySelector('.raining input')
+var volumeRaining = document.querySelector('.raining span')
+var rangeRestaurant = document.querySelector('.restaurant input')
+var volumeRestaurant = document.querySelector('.restaurant span')
+var rangeCamping = document.querySelector('.camping input')
+var volumeCamping = document.querySelector('.camping span')
 
 
 export {
@@ -25,11 +32,9 @@ export {
   buttonSet,
   buttonMinus,
   buttonPlus,
-  minutesDisplay,
-  secondsDisplay,
-  buttonOutdoors,  
-  buttonRaining,
-  buttonRestaurant,
-  buttonCamping,
-  volumeBarCamping,
+  minutesDisplay,  secondsDisplay,
+  buttonOutdoors,    buttonRaining,  buttonRestaurant,  buttonCamping,
+  rangeOutdoors,  rangeRaining,  rangeRestaurant,  rangeCamping,
+  volumeOutdoors,  volumeRaining,  volumeRestaurant,  volumeCamping, 
+
 }

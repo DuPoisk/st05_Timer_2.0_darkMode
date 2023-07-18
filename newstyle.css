@@ -36,7 +36,7 @@ main {
   align-items: center;
 }
 
-span {
+.numbers span {
   font-size: 12.6rem;
   margin-bottom: 1.7rem;
   font-weight: 500;
