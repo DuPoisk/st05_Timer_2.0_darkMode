@@ -109,6 +109,9 @@ buttonCamping.addEventListener('click', function() {
 rangeOutdoors.addEventListener('click', function(){
   var range = rangeOutdoors
   var value = volumeOutdoors
+  document.getElementById("volumeRaining").value = "50";
+  document.getElementById("volumeRestaurant").value = "50";
+  document.getElementById("volumeCamping").value = "50";
 
   range.addEventListener('input', function() {
     
@@ -138,6 +141,9 @@ rangeOutdoors.addEventListener('click', function(){
 rangeRaining.addEventListener('click', function(){
   var range = rangeRaining
   var value = volumeRaining
+  document.getElementById("volumeOutdoors").value = "50";
+  document.getElementById("volumeRestaurant").value = "50";
+  document.getElementById("volumeCamping").value = "50";
 
   range.addEventListener('input', function() {
     
@@ -168,6 +174,9 @@ rangeRaining.addEventListener('click', function(){
 rangeRestaurant.addEventListener('click', function(){
   var range = rangeRestaurant
   var value = volumeRestaurant
+  document.getElementById("volumeOutdoors").value = "50";
+  document.getElementById("volumeRaining").value = "50";
+  document.getElementById("volumeCamping").value = "50";
 
   range.addEventListener('input', function() {
     
@@ -198,6 +207,9 @@ rangeRestaurant.addEventListener('click', function(){
 rangeCamping.addEventListener('click', function(){
   var range = rangeCamping
   var value = volumeCamping
+  document.getElementById("volumeOutdoors").value = "50";
+  document.getElementById("volumeRaining").value = "50";
+  document.getElementById("volumeRestaurant").value = "50";
 
   range.addEventListener('input', function() {
     
