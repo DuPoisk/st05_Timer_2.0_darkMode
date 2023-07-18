@@ -64,27 +64,40 @@ buttonStop.addEventListener('click', function() {
   })
 
 buttonSet.addEventListener('click', function(){
-  function getMinutes(){
+  
+    function getMinutes(){
       let newMinutes = prompt("Quantos minutos?")
-       
-      if (!newMinutes){
-        return false
+      
+      if (!newMinutes){ //testar se minutes = undefined, null ou zero
+        return false // pega os minutos ou me retorna falso
       }
-  
+
      return newMinutes
-  
-  }
+    }
 
-  let newMinutes = getMinutes()
-  
-  if(!newMinutes) {
-    timer.reset()
-    return
-  }
+    let newMinutes = getMinutes()
 
-  timer.updateDisplay(newMinutes, 0)
-  timer.updateMinutes(newMinutes)
-})
+    if(!newMinutes) {
+      timer.reset()
+      return
+    }
+
+    timer.updateDisplay(newMinutes, 0)
+    timer.updateMinutes(newMinutes)
+  })
+
+  
+
+  // let newMinutes = getMinutes()
+  
+  // if(!newMinutes) {
+  //   timer.reset()
+  //   return
+  // }
+
+//   timer.updateDisplay(newMinutes, 0)
+//   timer.updateMinutes(newMinutes)
+// })
 
 
 //BUTTONS: SOUND AND INPUT RANGE

@@ -1,36 +1,30 @@
 import Sounds from "./sounds.js"
+import {
+  buttonPlay,
+  buttonPause,  
+} from "./elements.js"
 
 export default function Timer (
   {
     minutesDisplay, 
     secondsDisplay, 
-    //resetControls,
-   // resetDisplay,
   }
 ){
 
   let timerTimeOut
   let minutes = Number(minutesDisplay.textContent)
-/*
-  function resetDisplay(){// antigo reset controls
-    buttonPlay.classList.remove("hide")
-    buttonPause.classList.add("hide")
-    //minutesDisplay.textContent = "25"
-    //secondsDisplay.textContent = "00"
-    //resetTimer()
-  } 
-  */
 
-  function reset(){
+  function reset(){ // para usar no botão STOP
     updateDisplay(minutes,0)
-    clearTimeout(timerTimeOut)
+    clearTimeout(timerTimeOut)// para apagar o número que a função
+    //timerTimeOut me devolve e assim parar de executá-la.
   }
 
-  function updateDisplay(newMinutes, seconds){
-    newMinutes = newMinutes === undefined ?  minutes : newMinutes
+  function updateDisplay (newMinutes,seconds) {
+    newMinutes = newMinutes === undefined ? minutes : newMinutes// chama-se ternário e funciona como um if
     seconds = seconds === undefined ? 0 : seconds
-    minutesDisplay.textContent = String(minutes).padStart(2,"0")
-    secondsDisplay.textContent = String(seconds).padStart(2,"0")
+    minutesDisplay.textContent = String(newMinutes).padStart(2,"0" )//aqui estava o erro em String(minutes) ao invés de (String(newMinutes))
+    secondsDisplay.textContent = String(seconds).padStart(2,"0" )
   }
 
   function countDown() {
@@ -49,7 +43,7 @@ export default function Timer (
 
         updateDisplay()
         Sounds().timeIsFinished()
-        return
+        return // para de executar
       }
 
       if (seconds <= 0){
@@ -58,7 +52,8 @@ export default function Timer (
         
       }
       
-      updateDisplay(minutes, String(seconds - 1))
+      updateDisplay(minutes, String(seconds - 1)) // contagem regressiva dos segundos
+      
       
       console.log(minutes, seconds)
       countDown()
