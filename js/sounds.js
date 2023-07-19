@@ -5,6 +5,8 @@
 //    buttonCamping,
 //  } from "./elements.js"
 
+//import { volumeOutdoors } from "./elements"
+
 export default function () {
   const buttonBgOutdoors = new Audio("./assets/sounds/Floresta.mp3")
   const buttonBgRaining = new Audio("./assets/sounds/Chuva.mp3")
@@ -15,9 +17,9 @@ export default function () {
   // amostra
   const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
   const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
-  const bgAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/bg-audio.mp3?raw=true")
+  //const bgAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/bg-audio.mp3?raw=true")
 
-  bgAudio.loop = true
+  //bgAudio.loop = true
   buttonBgOutdoors.loop = true
   buttonBgRaining.loop = true
   buttonBgRestaurant.loop = true
@@ -27,22 +29,11 @@ export default function () {
   buttonBgRaining.volume = 0.5
   buttonBgRestaurant.volume = 0.5
   buttonBgCamping.volume = 0.5
-  
-
- 
+   
 
   function pressButton(){
     buttonPressAudio.play()
-  }
-
-  function timeIsFinished() {
-    kitchenTimer.play() 
-
-    buttonBgOutdoors.pause()
-    buttonBgRaining.pause()
-    buttonBgRestaurant.pause()
-    buttonBgCamping.pause()
-  }
+  } 
 
   function bgAudioStart(){
     bgAudio.play()
@@ -81,10 +72,14 @@ export default function () {
     
   }
 
+  function timeIsFinished() {    
+    kitchenTimer.play()   
+  }
+
   return {
     buttonPressAudio,
     kitchenTimer,
-    bgAudio,  
+    //bgAudio,  
     pressButton,
     timeIsFinished,
     bgAudioStart,   

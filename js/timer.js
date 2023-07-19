@@ -42,7 +42,7 @@ export default function Timer (
         buttonPause.classList.add("hide")
 
         updateDisplay()
-        Sounds().timeIsFinished()
+        Sounds().timeIsFinished()          
         return // para de executar
       }
 
@@ -55,7 +55,7 @@ export default function Timer (
       updateDisplay(minutes, String(seconds - 1)) // contagem regressiva dos segundos
       
       
-      console.log(minutes, seconds)
+      //console.log(minutes, seconds)
       countDown()
     }, 1000)
   }

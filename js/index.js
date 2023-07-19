@@ -1,5 +1,4 @@
 //default import
-//import Controls from "./controls.js"
 import Timer from "./timer.js"
 import Sound from "./sounds.js"
 import {
@@ -20,15 +19,9 @@ import {
 
  } from "./elements.js"
 
-//const controls = Controls({
-  //buttonPlay,
-  //buttonPause, 
-//})
-
 const timer = Timer({
   minutesDisplay, //shorthand
-  secondsDisplay, 
-  //resetControls: timer.reset, 
+  secondsDisplay,   
 })
 
 const sound = Sound ()
@@ -42,7 +35,7 @@ buttonPlay.addEventListener('click', function() { // depois do click executa a f
     
     timer.countDown()
     sound.pressButton()
-  })
+})
 
 buttonPause.addEventListener('click', function() {
     //controls.pause()
@@ -52,7 +45,7 @@ buttonPause.addEventListener('click', function() {
     timer.hold()
     sound.pressButton()
     
-  })
+})
 
 buttonStop.addEventListener('click', function() {
     //controls.reset()
@@ -61,7 +54,7 @@ buttonStop.addEventListener('click', function() {
 
     timer.reset()
     sound.pressButton()
-  })
+})
 
 buttonSet.addEventListener('click', function(){
   
@@ -84,20 +77,34 @@ buttonSet.addEventListener('click', function(){
 
     timer.updateDisplay(newMinutes, 0)
     timer.updateMinutes(newMinutes)
-  })
+})
 
+buttonMinus.addEventListener('click', function() {
+  sound.pressButton()
+  let minutes = Number(minutesDisplay.textContent)
   
 
-  // let newMinutes = getMinutes()
-  
-  // if(!newMinutes) {
-  //   timer.reset()
-  //   return
-  // }
+  function minusPress (){    
+    if (minutes >= 5){
+      minutesDisplay.textContent = String(minutes - 5).padStart(2,"0" )
+      return
+    }
 
-//   timer.updateDisplay(newMinutes, 0)
-//   timer.updateMinutes(newMinutes)
-// })
+    if (minutes <= 5){
+      minutesDisplay.textContent = String(0).padStart(2,"0" )
+      return
+    }
+  }
+  minusPress()
+})
+
+buttonPlus.addEventListener('click', function() {
+  sound.pressButton()
+  let minutes = Number(minutesDisplay.textContent)
+  minutesDisplay.textContent = String(minutes + 5).padStart(2,"0" )
+ 
+})
+  
 
 
 //BUTTONS: SOUND AND INPUT RANGE
@@ -124,12 +131,13 @@ rangeOutdoors.addEventListener('click', function(){
   var value = volumeOutdoors
   document.getElementById("volumeRaining").value = "50";
   document.getElementById("volumeRestaurant").value = "50";
-  document.getElementById("volumeCamping").value = "50";
+  document.getElementById("volumeCamping").value = "50";  
 
   range.addEventListener('input', function() {
     
     value.textContent = Number(this.value)
     console.log(this.value)
+    
   
     if (value.textContent < 50){
       console.log("é zero")
@@ -249,30 +257,6 @@ rangeCamping.addEventListener('click', function(){
 
 })
 
-
-  /*buttonMinus.addEventListener('click', function() {
-    sound.pressButton()
-    minusPress()
-
-    function minusPress (){
-      let minutes = Number(minutesDisplay.textContent)
-      if (minutes >= 5){
-        minutes = minutes - 5
-        return
-      }
-
-
-    }
-  })
-  */
-
-
-  /* buttonPlus.addEventListener('click', function() {
-      sound.pressButton()
-  })*/
-
-
-
-/*fazer funcionalidade do +-
+/*
 
 fazer funcionalidade da mudança de cor*/
