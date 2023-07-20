@@ -16,20 +16,28 @@
   --font-family:'Roboto', sans-serif;
 }
 
+.modeIcons {
+  margin-top: 6rem;
+  margin-right: 6rem;
+  margin-bottom: 9.2rem;
+  display: flex;
+  justify-content:flex-end;
+}
+
 main {
   background-color: var(--bg-color-day);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20rem; /*tirar*/
-  min-height: 100vh;
+  padding: 0.5rem;
+  /*gap: 20rem; /*tirar*/
+  /**min-height: 100vh;*/
 
   font-family: var(--font-family);
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-
 }
 
 #numbersANDsettingButtons {
@@ -69,38 +77,58 @@ button {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   width: clamp( 28rem, 28rem + 20vw, 35rem); /* rever */
-
 }
 
 #backgroundSounds button {
   background: var(--button-off-color);
   width: 13.8rem;
   height: 15.2rem;
-  margin: 1.6rem;
+  margin: 2.4rem;
   border-radius: 2.4rem;
 }
 
-/* #pomodoro span {
-  font-size: 5.0rem;
+input {
+  cursor: pointer;
+  width: 9rem;
+  height: 1.6rem;    
 }
 
-#pomodoro {
-  display: flex;
-  align-items: center;
-  margin-bottom: 3rem;
-  gap: 2rem;
+#backgroundSounds input {
+  margin-top: 3.2rem;
 }
 
-#pomodoro button {
-  
-  border: green 2px solid;
-  height: 7rem;
-  width: 7rem; */
+.settingButtons button:hover, .modeIcons svg:hover {
+  -xpedu-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  /*box-shadow: inset 0 0 0 0.5rem #53a7ea; colocando borda*/
+}
+
+/* input:focus::-webkit-slider-runnable-track {
+  background-color: white;
+  width: 8.5rem;
+  height: 1rem;
+  flex-shrink: 0;
+  border-radius: 9999px; 
+}  DEIXAR PARA FUTUROS AJUSTES*/
 
 
-/* #backgroundSounds svg path {
-  fill: var(--contour-on-color);
-} */
+
+
+/* tirar
+
+input[type=range]::-webkit-slider-thumb, input[type='range']::-moz-range-thumb, input[type='range']::-ms-range-thumb{ editar a bolinha
+  all:unset;
+  -webkit-appearance: none;
+}
+
+input:focus::-webkit-slider-runnable-track {
+  /* Use o pseudo-seletor "::-webkit-slider-runnable-track" para customizar o "trilho" do campo.
+  background: fuchsia;
+  width: 1.0rem;
+  height: 1.6rem;
+  border-radius: 3rem; 
+}*/
 
 @media (max-width: 886px) {
   :root {
@@ -118,10 +146,3 @@ button {
     gap: 8rem;
   }
 }
-
-
-
-
-
-
-
