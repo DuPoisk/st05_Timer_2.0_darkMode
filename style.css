@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -99,6 +101,23 @@ button {
 /* #backgroundSounds svg path {
   fill: var(--contour-on-color);
 } */
+
+@media (max-width: 886px) {
+  :root {
+    font-size: 56.62%; /*regra de 3: 
+      1rem = 16px ------------------- 100%
+      1 rem = 10(novo padrão) -------x 
+      x =aprox 62.5%.
+      Se ao inves de 10 forem 9, 56.62%
+      */
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+  }
+}
 
 
 
