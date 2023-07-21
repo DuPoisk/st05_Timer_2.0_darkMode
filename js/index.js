@@ -130,9 +130,9 @@ buttonOutdoors.addEventListener('click', function() {
 
   document.getElementById("volumeRaining").value = "50";
   document.getElementById("volumeRestaurant").value = "50";
-  document.getElementById("volumeCamping").value = "50";  
+  document.getElementById("volumeCamping").value = "50"; 
 
-  buttonOutdoorsHoverIcon.style.fill = "#FFFFFF"
+ /* buttonOutdoorsHoverIcon.style.fill = "#FFFFFF"
   buttonOutdoorsHoverBg.style.background = "#02799D"
   //buttonOutdoorsHoverInput.style.fill = "#FFFFFF"
 
@@ -141,7 +141,7 @@ buttonOutdoors.addEventListener('click', function() {
   buttonRestaurantHoverIcon.style.fill = "#323238"
   buttonRestaurantHoverBg.style.background = "#E1E1E6"
   buttonCampingHoverIcon.style.fill = "#323238"
-  buttonCampingHoverBg.style.background = "#E1E1E6"
+  buttonCampingHoverBg.style.background = "#E1E1E6" */
 })
 
 buttonRaining.addEventListener('click', function() {
@@ -151,7 +151,7 @@ buttonRaining.addEventListener('click', function() {
   document.getElementById("volumeRestaurant").value = "50";
   document.getElementById("volumeCamping").value = "50";
 
-  buttonRainingHoverIcon.style.fill = "#FFFFFF"
+ /* buttonRainingHoverIcon.style.fill = "#FFFFFF"
   buttonRainingHoverBg.style.background = "#02799D"
   //buttonRainingHoverInput.style.fill = "#FFFFFF"
 
@@ -160,7 +160,7 @@ buttonRaining.addEventListener('click', function() {
   buttonRestaurantHoverIcon.style.fill = "#323238"
   buttonRestaurantHoverBg.style.background = "#E1E1E6"
   buttonCampingHoverIcon.style.fill = "#323238"
-  buttonCampingHoverBg.style.background = "#E1E1E6"
+  buttonCampingHoverBg.style.background = "#E1E1E6" */
 })
 
 buttonRestaurant.addEventListener('click', function() {
@@ -170,7 +170,7 @@ buttonRestaurant.addEventListener('click', function() {
   document.getElementById("volumeRaining").value = "50";
   document.getElementById("volumeCamping").value = "50";
 
-  buttonRestaurantHoverIcon.style.fill = "#FFFFFF"
+  /*buttonRestaurantHoverIcon.style.fill = "#FFFFFF"
   buttonRestaurantHoverBg.style.background = "#02799D"
  // buttonRestaurantHoverInput.style.fill = "#FFFFFF"
 
@@ -179,7 +179,7 @@ buttonRestaurant.addEventListener('click', function() {
   buttonRainingHoverIcon.style.fill = "#323238"
   buttonRainingHoverBg.style.background = "#E1E1E6"
   buttonCampingHoverIcon.style.fill = "#323238"
-  buttonCampingHoverBg.style.background = "#E1E1E6"
+  buttonCampingHoverBg.style.background = "#E1E1E6" */
 })
 
 buttonCamping.addEventListener('click', function() {
@@ -189,7 +189,7 @@ buttonCamping.addEventListener('click', function() {
   document.getElementById("volumeRaining").value = "50";
   document.getElementById("volumeRestaurant").value = "50";
 
-  buttonCampingHoverIcon.style.fill = "#FFFFFF"
+  /*buttonCampingHoverIcon.style.fill = "#FFFFFF"
   buttonCampingHoverBg.style.background = "#02799D"
   //buttonCampingHoverInput.style.fill = "#FFFFFF"
 
@@ -198,7 +198,7 @@ buttonCamping.addEventListener('click', function() {
   buttonRainingHoverIcon.style.fill = "#323238"
   buttonRainingHoverBg.style.background = "#E1E1E6"
   buttonRestaurantHoverIcon.style.fill = "#323238"
-  buttonRestaurantHoverBg.style.background = "#E1E1E6"
+  buttonRestaurantHoverBg.style.background = "#E1E1E6"*/
 })
 
 
@@ -358,52 +358,171 @@ const colorStopButton = document.querySelector('.stop path')
 const colorMinusButton = document.querySelector('.minus path')
 const colorPlusButton = document.querySelector('.plus path')
 
+function colorChangingMode(){
+  if (buttonLightMode.onclick = true) {
+    //function changeToDarkMode(){
+      colorBg.style.backgroundColor = "#121214"; // background tela
+      colorSpan.style.color = "#FFFFFF"; // numeros
+      
+      colorIconOutdoor.style.fill = "#FFFFFF"; //icones
+      colorIconCamping.style.fill = "#FFFFFF" ;
+      colorIconRestaurant.style.fill = "#FFFFFF";
+      colorIconRaining.style.fill = "#FFFFFF";
+    
+      colorPlayButton.style.fill = "#C4C4CC"; // setbuttons
+      colorPauseButton.style.fill = "#C4C4CC";
+      colorPauseButtonLeft.style.fill = "#C4C4CC";
+      colorPauseButtonRight.style.fill = "#C4C4CC";
+      colorStopButton.style.fill = "#C4C4CC";
+      colorPlusButton.style.fill = "#C4C4CC";
+      colorMinusButton.style.fill = "#C4C4CC"; 
+    //}
+    //changeToDarkMode()
 
-function changeToDarkMode(){
-  colorBg.style.backgroundColor = "#121214";
-  colorSpan.style.color = "#FFFFFF";
-  
-  colorIconOutdoor.style.fill = "#FFFFFF";
-  colorIconCamping.style.fill = "#FFFFFF" ;
-  colorIconRestaurant.style.fill = "#FFFFFF";
-  colorIconRaining.style.fill = "#FFFFFF";
+  } else if (buttonDarkMode.onclick = true){
+      function changeToLightMode(){  
+        colorBg.style.backgroundColor = "#FFFFFF";
+        colorSpan.style.color = "#323238";
+      
+        colorIconOutdoor.style.fill = "#323238";
+        colorIconCamping.style.fill = "#323238";
+        colorIconRestaurant.style.fill = "#323238";
+        colorIconRaining.style.fill = "#323238";
+      
+        colorPlayButton.style.fill = "#323238";
+        colorPauseButton.style.fill = "#323238";
+        colorPauseButtonLeft.style.fill = "#323238";
+        colorPauseButtonRight.style.fill = "#323238";
+        colorStopButton.style.fill = "#323238";
+        colorPlusButton.style.fill = "#323238";
+        colorMinusButton.style.fill = "#323238"; 
+      }
+      changeToLightMode()
+    }
+}
 
-  colorPlayButton.style.fill = "#C4C4CC";
-  colorPauseButton.style.fill = "#C4C4CC";
-  colorPauseButtonLeft.style.fill = "#C4C4CC";
-  colorPauseButtonRight.style.fill = "#C4C4CC";
-  colorStopButton.style.fill = "#C4C4CC";
-  colorPlusButton.style.fill = "#C4C4CC";
-  colorMinusButton.style.fill = "#C4C4CC"; 
-
-  while(buttonLightMode.onclick = true){
+function colorPressButton (){
+  while(buttonLightMode.onclick = true){ // dark mode
+    console.log("darkmode")
     colorBgOutdoors.style.backgroundColor = "#29292E";
     colorBgRaining.style.backgroundColor = "#29292E";
     colorBgRestaurant.style.backgroundColor = "#29292E";
     colorBgCamping.style.backgroundColor = "#29292E";
-    if(buttonOutdoors.onclick = true){
-      console.log("hello");
+  
+   if (buttonOutdoors.onclick = true){
+      buttonOutdoorsHoverIcon.style.fill = "#FFFFFF";
+      buttonOutdoorsHoverBg.style.background = "#0A3442";
+      //buttonOutdoorsHoverInput.style.fill = "#FFFFFF"
+
+      buttonRainingHoverIcon.style.fill = "#C4C4CC";
+      buttonRainingHoverBg.style.background = "#29292E";
+      buttonRestaurantHoverIcon.style.fill = "#C4C4CC";
+      buttonRestaurantHoverBg.style.background = "#29292E";
+      buttonCampingHoverIcon.style.fill = "#C4C4CC";
+      buttonCampingHoverBg.style.background = "#29292E";
+    }
+
+    else if(buttonRaining.onclick = true){
+      buttonRainingHoverIcon.style.fill = "#FFFFFF";
+      buttonRainingHoverBg.style.background = "#0A3442";
+      //buttonRainingHoverInput.style.fill = "#FFFFFF";
+      
+      buttonOutdoorsHoverIcon.style.fill = "#C4C4CC";
+      buttonOutdoorsHoverBg.style.background = "#29292E";
+      buttonRestaurantHoverIcon.style.fill = "#C4C4CC";
+      buttonRestaurantHoverBg.style.background = "#29292E";
+      buttonCampingHoverIcon.style.fill = "#C4C4CC";
+      buttonCampingHoverBg.style.background = "#29292E";
+    }
+
+    else if(buttonRestaurant.onclick = true){
+      buttonRestaurantHoverIcon.style.fill = "#FFFFFF";
+      buttonRestaurantHoverBg.style.background = "#0A3442";
+     // buttonRestaurantHoverInput.style.fill = "#FFFFFF";
+
+      buttonOutdoorsHoverIcon.style.fill = "#C4C4CC";
+      buttonOutdoorsHoverBg.style.background = "#29292E";
+      buttonRainingHoverIcon.style.fill = "#C4C4CC";
+      buttonRainingHoverBg.style.background = "#29292E";
+      buttonCampingHoverIcon.style.fill = "#C4C4CC";
+      buttonCampingHoverBg.style.background = "#29292E";
+    }
+
+    else if(buttonCamping.onclick = true){
+      buttonCampingHoverIcon.style.fill = "#FFFFFF";
+      buttonCampingHoverBg.style.background = "#0A3442";
+      //buttonCampingHoverInput.style.fill = "#FFFFFF";
+    
+      buttonOutdoorsHoverIcon.style.fill = "#C4C4CC";
+      buttonOutdoorsHoverBg.style.background = "#29292E";
+      buttonRainingHoverIcon.style.fill = "#C4C4CC";
+      buttonRainingHoverBg.style.background = "#29292E";
+      buttonRestaurantHoverIcon.style.fill = "#C4C4CC";
+      buttonRestaurantHoverBg.style.background = "#29292E";
     }
   }
-}
 
 
-function changeToLightMode(){  
-  colorBg.style.backgroundColor = "#FFFFFF";
-  colorSpan.style.color = "#323238";
 
-  colorIconOutdoor.style.fill = "#323238";
-  colorIconCamping.style.fill = "#323238";
-  colorIconRestaurant.style.fill = "#323238";
-  colorIconRaining.style.fill = "#323238";
+   while(buttonDarkMode.onclick = true) {// light mode ###############################################################
+    console.log("lightmode")
+    colorBgOutdoors.style.backgroundColor = "#323238";
+    colorBgRaining.style.backgroundColor = "#323238";
+    colorBgRestaurant.style.backgroundColor = "#323238";
+    colorBgCamping.style.backgroundColor = "#323238";
 
-  colorPlayButton.style.fill = "#323238";
-  colorPauseButton.style.fill = "#323238";
-  colorPauseButtonLeft.style.fill = "#323238";
-  colorPauseButtonRight.style.fill = "#323238";
-  colorStopButton.style.fill = "#323238";
-  colorPlusButton.style.fill = "#323238";
-  colorMinusButton.style.fill = "#323238";  
+    if (buttonOutdoors.onclick = true){
+      buttonOutdoorsHoverIcon.style.fill = "#FFFFFF";
+      buttonOutdoorsHoverBg.style.background = "#02799D";
+      //buttonOutdoorsHoverInput.style.fill = "#FFFFFF";
+
+      buttonRainingHoverIcon.style.fill = "#323238";
+      buttonRainingHoverBg.style.background = "#E1E1E6";
+      buttonRestaurantHoverIcon.style.fill = "#323238";
+      buttonRestaurantHoverBg.style.background = "#E1E1E6";
+      buttonCampingHoverIcon.style.fill = "#323238";
+      buttonCampingHoverBg.style.background = "#E1E1E6";
+    }
+
+    else if(buttonRaining.onclick = true){
+      buttonRainingHoverIcon.style.fill = "#FFFFFF";
+      buttonRainingHoverBg.style.background = "#02799D";
+      //buttonRainingHoverInput.style.fill = "#FFFFFF"
+      
+      buttonOutdoorsHoverIcon.style.fill = "#323238";
+      buttonOutdoorsHoverBg.style.background = "#E1E1E6";
+      buttonRestaurantHoverIcon.style.fill = "#323238";
+      buttonRestaurantHoverBg.style.background = "#E1E1E6";
+      buttonCampingHoverIcon.style.fill = "#323238";
+      buttonCampingHoverBg.style.background = "#E1E1E6";
+    }
+
+    else if(buttonRestaurant.onclick = true){
+      buttonRestaurantHoverIcon.style.fill = "#FFFFFF";
+      buttonRestaurantHoverBg.style.background = "#02799D";
+    // buttonRestaurantHoverInput.style.fill = "#FFFFFF";
+
+      buttonOutdoorsHoverIcon.style.fill = "#323238";
+      buttonOutdoorsHoverBg.style.background = "#E1E1E6";
+      buttonRainingHoverIcon.style.fill = "#323238";
+      buttonRainingHoverBg.style.background = "#E1E1E6";
+      buttonCampingHoverIcon.style.fill = "#323238";
+      buttonCampingHoverBg.style.background = "#E1E1E6";
+    }
+
+    else if(buttonCamping.onclick = true){
+      buttonCampingHoverIcon.style.fill = "#FFFFFF";
+      buttonCampingHoverBg.style.background = "#02799D";
+      //buttonCampingHoverInput.style.fill = "#FFFFFF"
+    
+      buttonOutdoorsHoverIcon.style.fill = "#323238";
+      buttonOutdoorsHoverBg.style.background = "#E1E1E6";
+      buttonRainingHoverIcon.style.fill = "#323238";
+      buttonRainingHoverBg.style.background = "#E1E1E6";
+      buttonRestaurantHoverIcon.style.fill = "#323238";
+      buttonRestaurantHoverBg.style.background = "#E1E1E6";
+    }
+  }   
 }
 
 
@@ -414,13 +533,15 @@ function changeToLightMode(){
 buttonLightMode.addEventListener('click', function() { 
   buttonDarkMode.classList.toggle("hide")
   buttonLightMode.classList.toggle("hide")
-  changeToDarkMode()
-})
+  colorChangingMode()
+  colorPressButton()
+});
 
 buttonDarkMode.addEventListener('click', function() { 
   buttonDarkMode.classList.toggle("hide")
   buttonLightMode.classList.toggle("hide")
-  changeToLightMode()
+  colorChangingMode()
+  colorPressButton()
 
   // buttonOutdoorsHoverIcon.style.fill = "#FFFFFF"
   // buttonOutdoorsHoverBg.style.background = "#02799D"
@@ -428,4 +549,4 @@ buttonDarkMode.addEventListener('click', function() {
 
   // buttonRainingHoverIcon.style.fill = "#323238"
   // buttonRainingHoverBg.style.background = "#E1E1E6"
-})
+});
