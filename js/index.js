@@ -25,34 +25,7 @@ const timer = Timer({
 })
 
 const sound = Sound ()
-  
 
-const buttonLightMode = document.querySelector('.lightMode')
-const buttonDarkMode = document.querySelector('.darkMode')
-
-buttonLightMode.addEventListener('click', function() { 
-  buttonDarkMode.classList.toggle("hide")
-  buttonLightMode.classList.toggle("hide")
-})
-
-buttonDarkMode.addEventListener('click', function() { 
-  buttonDarkMode.classList.toggle("hide")
-  buttonLightMode.classList.toggle("hide")
-
-  buttonOutdoorsHoverIcon.style.fill = "#FFFFFF"
-  buttonOutdoorsHoverBg.style.background = "#02799D"
-  //buttonOutdoorsHoverInput.style.fill = "#FFFFFF"
-
-  buttonRainingHoverIcon.style.fill = "#323238"
-  buttonRainingHoverBg.style.background = "#E1E1E6"
-  buttonRestaurantHoverIcon.style.fill = "#323238"
-  buttonRestaurantHoverBg.style.background = "#E1E1E6"
-  buttonCampingHoverIcon.style.fill = "#323238"
-  buttonCampingHoverBg.style.background = "#E1E1E6"
-
-
-
-})
 
 //BUTTONS: CONFIG
 buttonPlay.addEventListener('click', function() { // depois do click executa a função
@@ -171,7 +144,6 @@ buttonOutdoors.addEventListener('click', function() {
   buttonCampingHoverBg.style.background = "#E1E1E6"
 })
 
-
 buttonRaining.addEventListener('click', function() {
   sound.pressButtonRaining() 
 
@@ -219,7 +191,7 @@ buttonCamping.addEventListener('click', function() {
 
   buttonCampingHoverIcon.style.fill = "#FFFFFF"
   buttonCampingHoverBg.style.background = "#02799D"
-  buttonCampingHoverInput.style.fill = "#FFFFFF"
+  //buttonCampingHoverInput.style.fill = "#FFFFFF"
 
   buttonOutdoorsHoverIcon.style.fill = "#323238"
   buttonOutdoorsHoverBg.style.background = "#E1E1E6"  
@@ -228,7 +200,6 @@ buttonCamping.addEventListener('click', function() {
   buttonRestaurantHoverIcon.style.fill = "#323238"
   buttonRestaurantHoverBg.style.background = "#E1E1E6"
 })
-
 
 
   //input range~
@@ -363,10 +334,98 @@ rangeCamping.addEventListener('click', function(){
 
 })
 
-//CHANGING COLORS
-  // Light mode
+//CHANGING COLORS - light mode and dark mode
+const buttonLightMode = document.querySelector('.lightMode')
+const buttonDarkMode = document.querySelector('.darkMode')
+const colorBg = document.querySelector('.container')
+const colorSpan = document.querySelector('.numbers')
+
+const colorIconOutdoor = document.querySelector('.outdoors path') 
+const colorIconRaining = document.querySelector('.raining path') 
+const colorIconRestaurant = document.querySelector('.restaurant path') 
+const colorIconCamping = document.querySelector('.camping path') 
+
+const colorBgOutdoors = document.querySelector('.outdoors')
+const colorBgRaining = document.querySelector('.raining')
+const colorBgRestaurant = document.querySelector('.restaurant')
+const colorBgCamping = document.querySelector('.camping')
+
+const colorPlayButton = document.querySelector('#buttonIcons path:nth-child(1)')
+const colorPauseButton = document.querySelector('.pause path')
+const colorPauseButtonLeft = document.getElementById('path2')
+const colorPauseButtonRight = document.getElementById('path3')
+const colorStopButton = document.querySelector('.stop path')
+const colorMinusButton = document.querySelector('.minus path')
+const colorPlusButton = document.querySelector('.plus path')
 
 
-/*
+function changeToDarkMode(){
+  colorBg.style.backgroundColor = "#121214";
+  colorSpan.style.color = "#FFFFFF";
+  
+  colorIconOutdoor.style.fill = "#FFFFFF";
+  colorIconCamping.style.fill = "#FFFFFF" ;
+  colorIconRestaurant.style.fill = "#FFFFFF";
+  colorIconRaining.style.fill = "#FFFFFF";
 
-fazer funcionalidade da mudança de cor*/
+  colorPlayButton.style.fill = "#C4C4CC";
+  colorPauseButton.style.fill = "#C4C4CC";
+  colorPauseButtonLeft.style.fill = "#C4C4CC";
+  colorPauseButtonRight.style.fill = "#C4C4CC";
+  colorStopButton.style.fill = "#C4C4CC";
+  colorPlusButton.style.fill = "#C4C4CC";
+  colorMinusButton.style.fill = "#C4C4CC"; 
+
+  while(buttonLightMode.onclick = true){
+    colorBgOutdoors.style.backgroundColor = "#29292E";
+    colorBgRaining.style.backgroundColor = "#29292E";
+    colorBgRestaurant.style.backgroundColor = "#29292E";
+    colorBgCamping.style.backgroundColor = "#29292E";
+    if(buttonOutdoors.onclick = true){
+      console.log("hello");
+    }
+  }
+}
+
+
+function changeToLightMode(){  
+  colorBg.style.backgroundColor = "#FFFFFF";
+  colorSpan.style.color = "#323238";
+
+  colorIconOutdoor.style.fill = "#323238";
+  colorIconCamping.style.fill = "#323238";
+  colorIconRestaurant.style.fill = "#323238";
+  colorIconRaining.style.fill = "#323238";
+
+  colorPlayButton.style.fill = "#323238";
+  colorPauseButton.style.fill = "#323238";
+  colorPauseButtonLeft.style.fill = "#323238";
+  colorPauseButtonRight.style.fill = "#323238";
+  colorStopButton.style.fill = "#323238";
+  colorPlusButton.style.fill = "#323238";
+  colorMinusButton.style.fill = "#323238";  
+}
+
+
+
+
+
+
+buttonLightMode.addEventListener('click', function() { 
+  buttonDarkMode.classList.toggle("hide")
+  buttonLightMode.classList.toggle("hide")
+  changeToDarkMode()
+})
+
+buttonDarkMode.addEventListener('click', function() { 
+  buttonDarkMode.classList.toggle("hide")
+  buttonLightMode.classList.toggle("hide")
+  changeToLightMode()
+
+  // buttonOutdoorsHoverIcon.style.fill = "#FFFFFF"
+  // buttonOutdoorsHoverBg.style.background = "#02799D"
+  
+
+  // buttonRainingHoverIcon.style.fill = "#323238"
+  // buttonRainingHoverBg.style.background = "#E1E1E6"
+})

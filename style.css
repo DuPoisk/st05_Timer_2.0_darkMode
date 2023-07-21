@@ -8,16 +8,22 @@
 
 :root {
   font-size: 62.5%;
-  --bg-color-day: #FFF;
+  --bg-color-light: #FFF;
   --button-on-color: hsl(194, 97%, 31%);
   --button-off-color: hsla(240, 9%, 89%, 1);
   --contour-on-color:hsla(0, 0%, 100%, 1);
   --contour-off-color: hsla(240, 6%, 21%, 1);
   --font-family:'Roboto', sans-serif;
+ 
+  --bg-color-dark:hsl(240, 5%, 7%);
+  --button-on-color-dark:#0a3343;
+  --button-setting-color-dark: hsla(240, 7%, 78%, 1);
+  --bg-color-details-dark:#FFFFFF;
+  
 }
 
 .modeIcons {
-  margin-top: 6rem;
+  padding-top: 6rem;
   margin-right: 6rem;
   margin-bottom: 9.2rem;
   display: flex;
@@ -25,7 +31,7 @@
 }
 
 main {
-  background-color: var(--bg-color-day);
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +56,7 @@ main {
   font-size: 12.6rem;
   margin-bottom: 1.7rem;
   font-weight: 500;
-  filter: drop-shadow(0px 4px 4px hsl(0, 0%, 0%));
+  filter: drop-shadow(0px 4px 4px #000000);
 }
 
 .hide{
@@ -104,6 +110,13 @@ input {
   /*box-shadow: inset 0 0 0 0.5rem #53a7ea; colocando borda*/
 }
 
+.container{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--bg-color-light);
+}
+
 /* input:focus::-webkit-slider-runnable-track {
   background-color: white;
   width: 8.5rem;
@@ -146,3 +159,6 @@ input:focus::-webkit-slider-runnable-track {
     gap: 8rem;
   }
 }
+
+
+
