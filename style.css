@@ -103,6 +103,10 @@ input {
   margin-top: 3.2rem;
 }
 
+.minutes{
+  cursor: pointer;
+}
+
 .settingButtons button:hover, .modeIcons svg:hover {
   -xpedu-transform: scale(1.1);
   -ms-transform: scale(1.1);

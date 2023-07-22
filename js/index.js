@@ -68,7 +68,7 @@ buttonStop.addEventListener('click', function() {
 buttonSet.addEventListener('click', function() {
   
     function getMinutes(){
-      let newMinutes = prompt("Quantos minutos?")
+      let newMinutes = prompt("Edit minutes:")
       
       if (!newMinutes){ //testar se minutes = undefined, null ou zero
         return false // pega os minutos ou me retorna falso
@@ -123,7 +123,7 @@ buttonOutdoors.addEventListener('click', function() {
   document.getElementById("volumeRaining").value = "50"
   document.getElementById("volumeRestaurant").value = "50"
   document.getElementById("volumeCamping").value = "50"
-  //(colorMode= "lightMode") 
+  
   if (buttonDarkMode.classList.contains("hide")){
     buttonOutdoorsHoverIcon.style.fill = "#FFFFFF"// light mode
     buttonOutdoorsHoverBg.style.background = "#02799D"
@@ -135,23 +135,22 @@ buttonOutdoors.addEventListener('click', function() {
     buttonRestaurantHoverBg.style.background = "#E1E1E6"
     buttonCampingHoverIcon.style.fill = "#323238"
     buttonCampingHoverBg.style.background = "#E1E1E6"
-    console.log(buttonDarkMode.classList)
   }
 
   else if(buttonLightMode.classList.contains("hide")){
     buttonOutdoorsHoverIcon.style.fill = "#FFFFFF"//dark mode
     buttonOutdoorsHoverBg.style.background = "#0A3442"
     //buttonOutdoorsHoverInput.style.fill = "#FFFFF
+
     buttonRainingHoverIcon.style.fill = "#C4C4CC"
     buttonRainingHoverBg.style.background = "#29292E"
     buttonRestaurantHoverIcon.style.fill = "#C4C4CC"
     buttonRestaurantHoverBg.style.background = "#29292E"
     buttonCampingHoverIcon.style.fill = "#C4C4CC"
     buttonCampingHoverBg.style.background = "#29292E"
-    console.log(buttonLightMode.classList)
-  }
-
+  }  
 })
+
 
 buttonRaining.addEventListener('click', function() {
   sound.pressButtonRaining() 
@@ -176,7 +175,7 @@ buttonRaining.addEventListener('click', function() {
   else if (buttonLightMode.classList.contains("hide")) { // dark mode
     buttonRainingHoverIcon.style.fill = "#FFFFFF"
     buttonRainingHoverBg.style.background = "#0A3442"
-    //buttonRainingHoverInput.style.fill = "#FFFFFF";
+    //buttonRainingHoverInput.style.fill = "#FFFFFF"
     
     buttonOutdoorsHoverIcon.style.fill = "#C4C4CC"
     buttonOutdoorsHoverBg.style.background = "#29292E"
@@ -211,7 +210,7 @@ buttonRestaurant.addEventListener('click', function() {
   else if (buttonLightMode.classList.contains("hide")) {
     buttonRestaurantHoverIcon.style.fill = "#FFFFFF" // dark mode
     buttonRestaurantHoverBg.style.background = "#0A3442"
-   // buttonRestaurantHoverInput.style.fill = "#FFFFFF";
+   // buttonRestaurantHoverInput.style.fill = "#FFFFFF"
 
     buttonOutdoorsHoverIcon.style.fill = "#C4C4CC"
     buttonOutdoorsHoverBg.style.background = "#29292E"
@@ -246,7 +245,7 @@ buttonCamping.addEventListener('click', function() {
   else if (buttonLightMode.classList.contains("hide")){ // dark mode
     buttonCampingHoverIcon.style.fill = "#FFFFFF"
     buttonCampingHoverBg.style.background = "#0A3442"
-    //buttonCampingHoverInput.style.fill = "#FFFFFF";
+    //buttonCampingHoverInput.style.fill = "#FFFFFF"
   
     buttonOutdoorsHoverIcon.style.fill = "#C4C4CC"
     buttonOutdoorsHoverBg.style.background = "#29292E"
@@ -262,42 +261,38 @@ buttonCamping.addEventListener('click', function() {
 rangeOutdoors.addEventListener('click', function(){  
   var range = rangeOutdoors
   var value = volumeOutdoors
-  document.getElementById("volumeRaining").value = "50";
-  document.getElementById("volumeRestaurant").value = "50";
-  document.getElementById("volumeCamping").value = "50";  
+  document.getElementById("volumeRaining").value = "50"
+  document.getElementById("volumeRestaurant").value = "50"
+  document.getElementById("volumeCamping").value = "50"  
+  console.log("teste")
 
-  range.addEventListener('input', function() {
-    
+  range.addEventListener('input', function() { 
     value.textContent = Number(this.value)
     console.log(this.value)
-    
-  
+   
+
     if (value.textContent < 50){
       console.log("é zero")
       sound.buttonBgOutdoors.volume = 0.0
     }
-
     else if (value.textContent > 99){ // não funcionando com "= 100"
       console.log("é cem")
       sound.buttonBgOutdoors.volume = 1.0
     }
-
     else if (value.textContent = 50){
       console.log("é cinquenta")
       sound.buttonBgOutdoors.volume = 0.5
-    }
-    
-  });
-
+    } 
+  })
 }) 
 
 
 rangeRaining.addEventListener('click', function(){
   var range = rangeRaining
   var value = volumeRaining
-  document.getElementById("volumeOutdoors").value = "50";
-  document.getElementById("volumeRestaurant").value = "50";
-  document.getElementById("volumeCamping").value = "50";
+  document.getElementById("volumeOutdoors").value = "50"
+  document.getElementById("volumeRestaurant").value = "50"
+  document.getElementById("volumeCamping").value = "50"
 
   range.addEventListener('input', function() {
     
@@ -318,9 +313,8 @@ rangeRaining.addEventListener('click', function(){
     else if (value.textContent = 50){
       console.log("é cinquenta")
       sound.buttonBgRaining.volume = 0.5
-    }
-    
-  });
+    }    
+  })
 
 })
 
@@ -328,9 +322,9 @@ rangeRaining.addEventListener('click', function(){
 rangeRestaurant.addEventListener('click', function(){
   var range = rangeRestaurant
   var value = volumeRestaurant
-  document.getElementById("volumeOutdoors").value = "50";
-  document.getElementById("volumeRaining").value = "50";
-  document.getElementById("volumeCamping").value = "50";
+  document.getElementById("volumeOutdoors").value = "50"
+  document.getElementById("volumeRaining").value = "50"
+  document.getElementById("volumeCamping").value = "50"
 
   range.addEventListener('input', function() {
     
@@ -353,7 +347,7 @@ rangeRestaurant.addEventListener('click', function(){
       sound.buttonBgRestaurant.volume = 0.5
     }
     
-  });
+  })
 
 })
 
@@ -361,9 +355,9 @@ rangeRestaurant.addEventListener('click', function(){
 rangeCamping.addEventListener('click', function(){
   var range = rangeCamping
   var value = volumeCamping
-  document.getElementById("volumeOutdoors").value = "50";
-  document.getElementById("volumeRaining").value = "50";
-  document.getElementById("volumeRestaurant").value = "50";
+  document.getElementById("volumeOutdoors").value = "50"
+  document.getElementById("volumeRaining").value = "50"
+  document.getElementById("volumeRestaurant").value = "50"
 
   range.addEventListener('input', function() {
     
@@ -386,7 +380,7 @@ rangeCamping.addEventListener('click', function(){
       sound.buttonBgCamping.volume = 0.5
     }
     
-  });
+  })
 
 })
 
@@ -419,30 +413,33 @@ buttonLightMode.addEventListener('click', function() { // CLICO PARA ATIVAR O MO
   
 })
 
+
 buttonDarkMode.addEventListener('click', function() { // CLICO PARA ATIVAR LIGHT MODE
   buttonDarkMode.classList.add("hide")
   buttonLightMode.classList.remove("hide")
+  console.log(buttonDarkMode)
   
-  colorBg.style.backgroundColor = "#FFFFFF";
-  colorSpan.style.color = "#323238";  
+  colorBg.style.backgroundColor = "#FFFFFF"
+  colorSpan.style.color = "#323238"  
 
-  colorIconOutdoor.style.fill = "#323238";
-  colorIconCamping.style.fill = "#323238";
-  colorIconRestaurant.style.fill = "#323238";
-  colorIconRaining.style.fill = "#323238"; 
+  colorIconOutdoor.style.fill = "#323238"
+  colorIconCamping.style.fill = "#323238"
+  colorIconRestaurant.style.fill = "#323238"
+  colorIconRaining.style.fill = "#323238" 
 
-  colorPlayButton.style.fill = "#323238";
-  colorPauseButton.style.fill = "#323238";
-  colorPauseButtonLeft.style.fill = "#323238";
-  colorPauseButtonRight.style.fill = "#323238";
-  colorStopButton.style.fill = "#323238";
-  colorPlusButton.style.fill = "#323238";
-  colorMinusButton.style.fill = "#323238"; 
+  colorPlayButton.style.fill = "#323238"
+  colorPauseButton.style.fill = "#323238"
+  colorPauseButtonLeft.style.fill = "#323238"
+  colorPauseButtonRight.style.fill = "#323238"
+  colorStopButton.style.fill = "#323238"
+  colorPlusButton.style.fill = "#323238"
+  colorMinusButton.style.fill = "#323238" 
 
-  colorBgOutdoors.style.backgroundColor = "#E1E1E6";// background buttons
-  colorBgRaining.style.backgroundColor = "#E1E1E6";
-  colorBgRestaurant.style.backgroundColor = "#E1E1E6";
-  colorBgCamping.style.backgroundColor = "#E1E1E6";  
-
+  colorBgOutdoors.style.backgroundColor = "#E1E1E6"// background buttons
+  colorBgRaining.style.backgroundColor = "#E1E1E6"
+  colorBgRestaurant.style.backgroundColor = "#E1E1E6"
+  colorBgCamping.style.backgroundColor = "#E1E1E6"  
 })
+
+
 
